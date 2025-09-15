@@ -2,7 +2,16 @@
 <knowledge>
 	<title>Brandveiligheid</title>
 	<description>KAS_assignment2</description>
-
+	<rule>
+	    <description>Determine result based on known facts</description>
+	    <if>
+	        <fact name="under_14">no</fact>
+	        <fact name="under-influence">no</fact>
+	    </if>
+	    <then>
+	        <fact name="result">yes</fact>
+	    </then>
+	</rule>
     <rule>
         <description>If the person who commited the crime is under 14 years old the tortious act cannot be attributed to them.</description>
         <if>
