@@ -1,5 +1,19 @@
+<?xml version="1.0"?>
 <knowledge>
-    <question>
+	<title>Brandveiligheid</title>
+	<description>KAS_assignment2</description>
+
+    <rule>
+        <description>If the person who commited the crime is under 14 years old the tortious act cannot be attributed to them.</description>
+        <if>
+            <fact name="under_14">yes</fact>
+        </if>
+        <then>
+            <fact name="attributed">no</fact>
+        </then>
+    </rule>
+
+	<question>
         <description>Was the person who commited the crime under 14 years old?</description>
         <option>
             <description>The person was under 14 years old</description>
@@ -14,16 +28,6 @@
             </then>
         </option>
     </question>
-
-    <rule>
-        <description>If the person who commited the crime is under 14 years old the tortious act cannot be attributed to them.</description>
-        <if>
-            <fact name="under_14">yes</fact>
-        </if>
-        <then>
-            <fact name="attributed">no</fact>
-        </then>
-    </rule>
 
     <question>
         <description>Was the person who commited the crime under influence of a mental or physical disability?</description>
@@ -40,4 +44,11 @@
             </then>
         </option>
     </question>
+	
+	<goal name="regels_van_toepassing">
+		<description>Do the damages need to be repaired by the person who committed the tortious act?</description>
+		<answer attributed="yes">Yes, the damages need to be repaired.</answer>
+		<answer attributed="no">No, the damages don't need to be repaired.</answer>
+	</goal>
 </knowledge>
+
