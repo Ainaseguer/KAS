@@ -13,7 +13,6 @@
 		</then>
 	</option>
 </question>
-
 <rule>
 	<description>If the person who commited the crime is under 14 years old the tortious act cannot be attributed
  to them.</description>
@@ -24,8 +23,6 @@
 		<fact name="attributed">no</fact>
 	</then>
 </rule>
-
-
 <question>
 	<description>Was the person who commited the crime under influence of a mental or physical disability?</description>
 	<option>
