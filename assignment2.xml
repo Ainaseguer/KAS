@@ -1,41 +1,43 @@
 <knowledge>
-	<question>
-		<description>Was the person who commited the crime under 14 years old?</description>
-		<option>
-			<description>The person was under 14 years old</description>
-			<then>
-				<fact name="under_14">yes</fact>
-			</then>
-		</option>
-		<option>
-			<description>The person was over 14 years old</description>
-			<then>
-				<fact name="under_14">no</fact>
-			</then>
-		</option>
-	</question>
-	<rule>
-		<description>If the person who commited the crime is under 14 years old the tortious act cannot be attributed to them.</description>
-		<if>
-			<fact name="under_14">yes</fact>
-		</if>
-		<then>
-			<fact name="attributed">no</fact>
-		</then>
-	</rule>
-	<question>
-		<description>Was the person who commited the crime under influence of a mental or physical disability?</description>
-		<option>
-			<description>The person was under influence of a mental or physical disability</description>
-			<then>
-				<fact name="under-influence">yes</fact>
-			</then>
-		</option>
-		<option>
-			<description>The person was not under influence of a mental or physical disability</description>
-			<then>
-				<fact name="under-influence">no</fact>
-			</then>
-		</option>
-	</question>
-<knowledge/>
+    <question>
+        <description>Was the person who commited the crime under 14 years old?</description>
+        <option>
+            <description>The person was under 14 years old</description>
+            <then>
+                <fact name="under_14">yes</fact>
+            </then>
+        </option>
+        <option>
+            <description>The person was over 14 years old</description>
+            <then>
+                <fact name="under_14">no</fact>
+            </then>
+        </option>
+    </question>
+
+    <rule>
+        <description>If the person who commited the crime is under 14 years old the tortious act cannot be attributed to them.</description>
+        <if>
+            <fact name="under_14">yes</fact>
+        </if>
+        <then>
+            <fact name="attributed">no</fact>
+        </then>
+    </rule>
+
+    <question>
+        <description>Was the person who commited the crime under influence of a mental or physical disability?</description>
+        <option>
+            <description>The person was under influence of a mental or physical disability</description>
+            <then>
+                <fact name="under-influence">yes</fact>
+            </then>
+        </option>
+        <option>
+            <description>The person was not under influence of a mental or physical disability</description>
+            <then>
+                <fact name="under-influence">no</fact>
+            </then>
+        </option>
+    </question>
+</knowledge>
