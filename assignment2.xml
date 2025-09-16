@@ -68,6 +68,35 @@
         </option>
     </question>
 
+	    <rule>
+        <description>If the person who committed the crime is under 14 years old, the tortious act cannot be attributed to them.</description>
+        <if>
+            <fact name="under_14">yes</fact>
+        </if>
+        <then>
+            <fact name="attributed">no</fact>
+        </then>
+    </rule>
+
+    <rule>
+        <description>If the violated rule was not meant to protect the injured person, the tortious act cannot be attributed to them.</description>
+        <if>
+            <fact name="meant_protect">no</fact>
+        </if>
+        <then>
+            <fact name="attributed">no</fact>
+        </then>
+    </rule>
+
+	<rule>
+        <description>If the person cannot be held responsible, the tortious act cannot be attributed to them.</description>
+        <if>
+            <fact name="tortious_responsibility">no</fact>
+        </if>
+        <then>
+            <fact name="attributed">no</fact>
+        </then>
+    </rule>
 	
 </knowledge>
 
