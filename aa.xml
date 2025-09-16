@@ -97,5 +97,35 @@
             <fact name="attributed">no</fact>
         </then>
     </rule>
-	
+
+	 <rule>
+        <description>If the act is attributed and the person was not under influence, then damages must be repaired.</description>
+        <if>
+            <fact name="attributed">yes</fact>
+            <fact name="under-influence">no</fact>
+        </if>
+        <then>
+            <fact name="result">yes</fact>
+        </then>
+    </rule>
+
+    <rule>
+        <description>If the act is not attributed, or the person was under influence, then damages do not need to be repaired.</description>
+        <if>
+            <fact name="attributed">no</fact>
+        </if>
+        <then>
+            <fact name="result">no</fact>
+        </then>
+    </rule>
+
+    <rule>
+        <description>If the person was under influence, damages do not need to be repaired.</description>
+        <if>
+            <fact name="under-influence">yes</fact>
+        </if>
+        <then>
+            <fact name="result">no</fact>
+        </then>
+    </rule>
 </knowledge>
