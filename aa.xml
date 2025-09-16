@@ -1,0 +1,101 @@
+<knowledge>
+	<title>Brandveiligheid</title>
+	<description>KAS_assignment2</description>
+	
+
+	
+	<question>
+	    <description>Can the person be held responsible for the tortious act?</description>
+	    <option>
+	        <description>Yes, the act was due to their fault or they are accountable by law/common rules</description>
+	        <then>
+	            <fact name="tortious_responsibility">yes</fact>
+	        </then>
+	    </option>
+	    <option>
+	        <description>No, the act was justified or not their fault</description>
+	        <then>
+	            <fact name="tortious_responsibility">no</fact>
+	        </then>
+	    </option>
+	</question>
+	
+	<question>
+        <description>Was the person who commited the crime under 14 years old?</description>
+        <option>
+            <description>The person was under 14 years old</description>
+            <then>
+                <fact name="under_14">yes</fact>
+            </then>
+        </option>
+        <option>
+            <description>The person was over 14 years old</description>
+            <then>
+                <fact name="under_14">no</fact>
+            </then>
+        </option>
+    </question>
+
+    <question>
+        <description>Was the person who committed the crime under the influence of a mental or physical disability?</description>
+        <option>
+            <description>The person was under the influence of a mental or physical disability</description>
+            <then>
+                <fact name="under-influence">yes</fact>
+            </then>
+        </option>
+        <option>
+            <description>The person was not under the influence of a mental or physical disability</description>
+            <then>
+                <fact name="under-influence">no</fact>
+            </then>
+        </option>
+    </question>
+
+	<question>
+		<description>Was the violated rule meant to protect the injured person?</description>
+        <option>
+            <description>Yes it was</description>
+            <then>
+                <fact name="meant_protect">yes</fact>
+            </then>
+        </option>
+        <option>
+            <description>No, it was not</description>
+            <then>
+                <fact name="meant_protect">no</fact>
+            </then>
+        </option>
+    </question>
+
+	    <rule>
+        <description>If the person who committed the crime is under 14 years old, the tortious act cannot be attributed to them.</description>
+        <if>
+            <fact name="under_14">yes</fact>
+        </if>
+        <then>
+            <fact name="attributed">no</fact>
+        </then>
+    </rule>
+
+    <rule>
+        <description>If the violated rule was not meant to protect the injured person, the tortious act cannot be attributed to them.</description>
+        <if>
+            <fact name="meant_protect">no</fact>
+        </if>
+        <then>
+            <fact name="attributed">no</fact>
+        </then>
+    </rule>
+
+	<rule>
+        <description>If the person cannot be held responsible, the tortious act cannot be attributed to them.</description>
+        <if>
+            <fact name="tortious_responsibility">no</fact>
+        </if>
+        <then>
+            <fact name="attributed">no</fact>
+        </then>
+    </rule>
+	
+</knowledge>
