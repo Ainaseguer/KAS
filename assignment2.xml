@@ -100,16 +100,17 @@
 	    <description>Do the damages need to be repaired by the person who committed the tortious act?</description>
 	    <answer value="yes">
 	        <if>
-	            <fact name="under_14">no</fact>
+	            <fact name="attributed">yes</fact>
 	            <fact name="under-influence">no</fact>
 	        </if>
 	    </answer>
 	    <answer value="no">
 	        <if>
-	            <fact name="under_14">yes</fact>
+	            <fact name="attributed">no</fact>
 	        </if>
 	    </answer>
 	</goal>
+
 	
 </knowledge>
 
