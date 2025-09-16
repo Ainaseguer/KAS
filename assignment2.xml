@@ -101,7 +101,6 @@
 	    <answer value="yes">
 	        <if>
 	            <fact name="attributed">yes</fact>
-	            <fact name="under-influence">no</fact>
 	        </if>
 	    </answer>
 	    <answer value="no">
